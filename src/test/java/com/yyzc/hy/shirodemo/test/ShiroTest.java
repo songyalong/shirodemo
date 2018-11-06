@@ -22,7 +22,10 @@ public class ShiroTest {
 
     @Before
     public void addUser(){
-        simpleAccountRealm.addAccount("mark", "123456");
+
+//        simpleAccountRealm.addAccount("mark", "123456");
+        //权限验证
+        simpleAccountRealm.addAccount("mark", "123456", "admin", "guest");
     }
 
     @Test
@@ -42,7 +45,10 @@ public class ShiroTest {
         // 判断是否认证通过
         System.out.println("isAuthenticated:" +subject.isAuthenticated());
 
+        System.out.println("has Role : "+ subject.hasRole("admin"));
+
         // 退出登录
         subject.logout();
+
     }
 }
