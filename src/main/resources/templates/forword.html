@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="zh_CN" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="UTF-8">
+    <title>登录成功</title>
+</head>
+<body>
+跳转
+<li><a shiro:hasRole="系统管理员">系统管理员</a></li>
+<li><a shiro:hasRole="系统管理员12">系统管理员12</a></li>
+<li><a shiro:hasPermission="系统管理员">系统管理员权限</a></li>
+</body>
+</html>

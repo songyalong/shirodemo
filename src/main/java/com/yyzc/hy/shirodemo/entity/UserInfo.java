@@ -19,4 +19,5 @@ public class UserInfo implements Serializable{
     private String name;
     private Integer id;
     private String password;
+    private boolean memberMe;
 }
