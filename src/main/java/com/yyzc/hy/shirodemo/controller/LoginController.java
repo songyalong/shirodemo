@@ -1,5 +1,6 @@
 package com.yyzc.hy.shirodemo.controller;
 
+import com.yyzc.hy.shirodemo.constant.AuthConst;
 import com.yyzc.hy.shirodemo.entity.UserInfo;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -28,6 +29,8 @@ public class LoginController {
     }
     @PostMapping(value = "/login")
     public ModelAndView login(UserInfo userInfo){
+
+        System.out.println("client = "+ AuthConst.clientUrl);
         Subject subject = SecurityUtils.getSubject();
         logger.info(userInfo.toString());
         UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(userInfo.getName(), userInfo.getPassword());
