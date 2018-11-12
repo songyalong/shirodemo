@@ -10,6 +10,7 @@ import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -22,6 +23,9 @@ import org.springframework.web.servlet.ModelAndView;
 @RestController
 public class LoginController {
     static Logger logger = LoggerFactory.getLogger(LoginController.class);
+
+    @Autowired
+    private AuthConst authConst;
     @RequestMapping(value = "/login")
     public ModelAndView login(){
         ModelAndView modelAndView = new ModelAndView("login");
